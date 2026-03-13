@@ -8,15 +8,14 @@ echo "Waiting for Docker daemon..."
 timeout 30 sh -c 'until docker info > /dev/null 2>&1; do sleep 1; done'
 echo "Docker daemon is ready."
 
-# ── OAuth: Copy credentials on first run (read-only mount -> bind mount) ──
-for dir in .gemini; do
-    host_dir="/tmp/${dir}-host"
-    target_dir="${HOME}/${dir}"
-    if [[ -d "${host_dir}" ]] && [[ -z "$(ls -A "${target_dir}" 2>/dev/null)" ]]; then
-        cp -a "${host_dir}/." "${target_dir}/"
-        echo "Initialized ${dir} credentials from host."
-    fi
-done
+# ── OAuth: Copy credentials only on first run (single file, not entire directory) ──
+_src="/tmp/.gemini-credentials.json"
+_dest="${HOME}/.gemini/oauth_creds.json"
+if [[ -f "${_src}" ]] && [[ ! -f "${_dest}" ]]; then
+    mkdir -p "${HOME}/.gemini"
+    cp "${_src}" "${_dest}"
+    echo "Initialized Gemini credentials from host."
+fi
 
 # ── API Key: Decrypt .env.gpg if present ──
 ENV_ENC="${HOME}/work/.env.gpg"
