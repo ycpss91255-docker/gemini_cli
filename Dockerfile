@@ -143,7 +143,7 @@ FROM base AS devel
 
 ARG USER
 ARG GROUP
-ARG ENTRYPOINT_FILE="entrypoint.sh"
+ARG ENTRYPOINT_FILE="script/entrypoint.sh"
 
 # Gemini CLI only
 RUN npm install -g @google/gemini-cli
