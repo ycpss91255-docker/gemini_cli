@@ -1,3 +1,5 @@
+**English** | **[繁體中文](README.zh-TW.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)**
+
 # Gemini CLI Docker Environment
 
 Docker-in-Docker (DinD) development container for Gemini CLI, Google's AI command-line tool. Available in CPU and NVIDIA GPU variants. Runs as non-root user with host UID/GID matching.
