@@ -2,6 +2,8 @@
 
 # Gemini CLI Docker 環境
 
+[![CI](https://github.com/ycpss91255-docker/gemini_cli/actions/workflows/main.yaml/badge.svg)](https://github.com/ycpss91255-docker/gemini_cli/actions/workflows/main.yaml) [![License](https://img.shields.io/badge/License-Apache--2.0-blue?style=flat-square)](../LICENSE)
+
 Docker-in-Docker (DinD) 開発コンテナ。Google AI コマンドラインツール Gemini CLI を搭載しています。CPU と NVIDIA GPU の2つのバリアントを提供し、非 root ユーザーで実行され、ホストの UID/GID を自動的にマッチングします。
 
 ## 目次
