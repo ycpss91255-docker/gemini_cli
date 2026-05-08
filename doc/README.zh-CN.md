@@ -2,6 +2,8 @@
 
 # Gemini CLI Docker 环境
 
+[![CI](https://github.com/ycpss91255-docker/gemini_cli/actions/workflows/main.yaml/badge.svg)](https://github.com/ycpss91255-docker/gemini_cli/actions/workflows/main.yaml) [![License](https://img.shields.io/badge/License-Apache--2.0-blue?style=flat-square)](../LICENSE)
+
 Docker-in-Docker (DinD) 开发容器，搭载 Google AI 命令行工具 Gemini CLI。提供 CPU 与 NVIDIA GPU 两种版本，以非 root 用户身份执行，并自动匹配主机的 UID/GID。
 
 ## 目录
